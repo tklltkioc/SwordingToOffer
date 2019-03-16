@@ -19,7 +19,6 @@ public class Sort10wan {
 			timesOfAges[ages[i]]++;;//新建额外数组，统计处于该年龄的人数
 		}
  
-		
 		//依据年龄降序重新排序
 		int index=0;
 		for(int i=0;i<oldestAge;i++){
