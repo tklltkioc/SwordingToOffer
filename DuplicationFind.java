@@ -26,7 +26,6 @@ public class DuplicationFind {
 	        }
 	        return -1;
 	    }
-	 
 	    public static void main(String[] args) {
 	    	DuplicationFind duplicationInArrayNotEdit = new DuplicationFind();
 	        int[] Array = new int[]{2,3,5,4,3,2,6,7};
