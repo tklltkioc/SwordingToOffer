@@ -51,6 +51,5 @@ public class StackbyTwoQueue<T> {
 		System.out.println(qs.pop());
 		qs.push(3);
 		System.out.println(qs.pop());
-		
 	}
 }
