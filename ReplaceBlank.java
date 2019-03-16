@@ -18,8 +18,8 @@ public class ReplaceBlank {
 		if(whiteCount==0) {
 			return usedlength;
 		}
-		usedlength--;//p1,数组需要减一
-		targetLength--;//p2
+		usedlength--;//指针p1,数组需要减一
+		targetLength--;//指针p2
 		while(usedlength>=0&&usedlength<targetLength) {
 			if(string[usedlength]==' ') {
 				string[targetLength--]='0';
