@@ -1,4 +1,4 @@
-package 剑指;
+package swordingTooffer;
 
 public class ReplaceBlank {
 	public static int replaceBlank(char[]string,int usedlength) {

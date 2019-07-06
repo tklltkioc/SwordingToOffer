@@ -1,11 +1,24 @@
-package 剑指;
+package swordingTooffer;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class PrintListRever {
 	public static class ListNode{
 		int val;
 		ListNode nxt;
+	}
+	public static ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+		Stack<Integer>s=new Stack<>();
+		while(listNode!=null){
+			s.push(listNode.val);
+			listNode=listNode.nxt;
+		}
+		ArrayList<Integer>list=new ArrayList<>();
+		while (!s.isEmpty()){
+			list.add(s.pop());
+		}
+		return list;
 	}
 	public static void printListInverselyUsingIteration(ListNode root) {
         Stack<ListNode> stack = new Stack<>();
@@ -38,6 +51,7 @@ public class PrintListRever {
 		root.nxt.nxt.nxt.val=4;
 		printListInverselyUsingIteration(root);
 		printListInverselyUsingRecursion(root);
+//		printListFromTailToHead(root);
 
 	}
 

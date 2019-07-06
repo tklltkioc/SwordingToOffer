@@ -1,4 +1,4 @@
-package 剑指;
+package swordingTooffer;
 
 public class ArrayBoolFind {
 	/**
@@ -27,6 +27,41 @@ public class ArrayBoolFind {
 		}
 		return false;
 	}
+	public static boolean Find(int target, int [][] array) {
+		if (array==null||array.length<1||array[0].length<1){
+			return false;
+		}
+		int row=0;
+		int col=array[0].length-1;
+		while (row<=array.length-1&&col>=0){
+			if (target>array[row][col]){
+				row++;
+			}
+			else if (target==array[row][col]){
+				return true;
+			}
+			else{
+				col--;
+			}
+		}
+		return false;
+	}
+	public static boolean find2(int[][]martx,int number){
+		for (int i=0;i<martx.length;i++){
+			int low=0;
+			int high=martx[i].length-1;
+			while (low<=high){
+				int mid=(low+high)/2;
+				if (number >martx[i][mid]) {
+					low=mid+1;
+				}else if (number<martx[i][mid]){
+					high=mid-1;
+				}else
+					return true;
+			}
+		}
+		return false;
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         int[][] matrix = {
@@ -36,6 +71,8 @@ public class ArrayBoolFind {
                 {6, 8, 11, 15,16}
         };
         System.out.println(find(matrix, 2 )); 
+        System.out.println(find2(matrix, 21));
+        System.out.println(Find(21,null));
 	}
 
 }

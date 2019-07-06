@@ -12,6 +12,7 @@ public class CutRope {
             int n=sc.nextInt();
             if (n==2||n==3){
                 System.out.println(n-1);
+                continue;
             }else {
                 System.out.println(dfs(n));
             }
@@ -25,7 +26,7 @@ public class CutRope {
         if (sa.containsKey(n))
             return sa.get(n);
         long max=n;
-        for (int i = 1; i < n/2; i++) {
+        for (int i = 1; i <=n/2; i++) {
             max=Math.max(max,i*dfs(n-i));
         }
         sa.put(n,max);

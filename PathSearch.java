@@ -64,6 +64,7 @@ public class PathSearch {
     public static void main(String[] args) {
         System.out.println(hasPath("abtgcfcsjdeh".toCharArray(), 3, 4,
                 "bfce".toCharArray()) );
+        System.out.println(hasPath("ABCESFCSADEE".toCharArray(),3,4,"ABCCED".toCharArray()));
 //        System.out.println(hasPath("abtgcfcsjdeh".toCharArray(), 2, 4,
 //                "bfce".toCharArray()) );
 //        System.out.println(hasPath(null, 0, 0,

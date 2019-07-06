@@ -1,4 +1,4 @@
-package com.alogithom.basic;
+package swordingTooffer;
 
 import java.util.Hashtable;
 
@@ -14,6 +14,7 @@ class DLinkedNode{
     DLinkedNode pre;
     DLinkedNode next;
 }
+
 public class HandMakeLRU {
     private Hashtable<Integer, DLinkedNode>cache=new Hashtable<Integer, DLinkedNode>();
     private int count;

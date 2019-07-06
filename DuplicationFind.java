@@ -1,4 +1,4 @@
-package 剑指;
+package swordingTooffer;
 
 public class DuplicationFind {
 	    private int countRange(int[] array,int length, int start, int end) {

@@ -1,6 +1,7 @@
 package swordingTooffer;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class printZhiTree {
@@ -51,6 +52,20 @@ public class printZhiTree {
         }
         return list;
     }
+    public static List<List<Integer>> levelOrderBottom(TreeNode root) {
+        List<List<Integer>> l=new ArrayList<List<Integer>>();
+        addLevel(l,0,root);
+//        Collections.reverse(l);
+        return l;
+    }
+    public static void addLevel(List<List<Integer>> list, int level, TreeNode node) {
+        if (node == null) return;
+        if (list.size () - 1 < level) list.add (new ArrayList<Integer> ());
+        list.get (level).add (node.val);
+
+        addLevel (list, level + 1, node.left);
+        addLevel (list, level + 1, node.right);
+    }
     public static void main(String[] args) {
         //       8
         //    /    \
@@ -72,6 +87,7 @@ public class printZhiTree {
         root.right.right = new TreeNode();
         root.right.right.val = 11;
         System.out.println(PrintZhi(root));
+        System.out.println(levelOrderBottom (root));
         //         1
         //        /
         //       3

@@ -7,7 +7,10 @@ import java.util.List;
 public class fullPermutation {
         public static void main(String[] args) {
             fullPermutation p = new fullPermutation();
-            System.out.println(p.Permutation( "abb").toString());
+            long startTime=System.currentTimeMillis();   //获取开始时间
+            System.out.println(p.Permutation( "122").toString());
+            long endTime=System.currentTimeMillis(); //获取结束时间
+            System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
         }
 
         public static ArrayList<String> Permutation(String str) {
@@ -20,14 +23,11 @@ public class fullPermutation {
         }
 
         public static void PermutationHelper(char[] cs, int i, List<String> list) {
-            if (i == cs.length - 1) {
+            if (i == cs.length-1) {
                 String val = String.valueOf(cs);
-                //去重
-                if (!list.contains(val))
-                    list.add(val);
+                list.add(val);
             } else {
                 for (int j = i; j < cs.length; j++) {
-
                     //             a|b|c(状态A)
                     //               |
                     //               |swap(0,0)

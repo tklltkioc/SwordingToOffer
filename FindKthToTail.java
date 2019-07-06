@@ -1,11 +1,11 @@
 package swordingTooffer;
- class ListNode {
+class ListNode {
     int val;
     ListNode next = null;
 
-    ListNode(int val) {
-        this.val = val;
-    }
+//    ListNode(int val) {
+//        this.val = val;
+//    }
 }
 
 public class FindKthToTail {
@@ -31,12 +31,12 @@ public class FindKthToTail {
 }
 
     public static void main(String[] args) {
-         ListNode head=new ListNode(0);
-         head.next=new ListNode(1);
-         head.next.next=new ListNode(2);
-         head.next.next.next=new ListNode(3);
-        System.out.println(FindKthToTail(head,5));
-        System.out.println(FindKthToTail(head,1).val);
+//         ListNode head=new ListNode(0);
+//         head.next=new ListNode(1);
+//         head.next.next=new ListNode(2);
+//         head.next.next.next=new ListNode(3);
+//        System.out.println(FindKthToTail(head,5));
+//        System.out.println(FindKthToTail(head,1).val);
 
 
     }
