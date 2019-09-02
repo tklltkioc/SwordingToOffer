@@ -1,24 +1,23 @@
 package SwordingToOffer;
 
-public class StrToIntvalue {
+public class StrToInt {
     public static int StrToInt(String str) {
         if (str.length () == 0 || str == null) {
             return 0;
         }
         char[] a = str.toCharArray ();
-        int fuhao = 0;
+        int strChar = 0;
         if (a[0] == '-')
-            fuhao = 1;
+            strChar = 1;
         int sum = 0;
-        for (int i = fuhao; i < str.length (); i++) {
+        for (int i = strChar; i < str.length (); i++) {
             if (a[i] == '+' && i == 0)
                 continue;
             if (a[i] < 48 || a[i] > 57)
                 return 0;
             sum = sum * 10 + a[i] - 48;
-
         }
-        return fuhao == 0 ? sum : sum * -1;
+        return strChar == 0 ? sum : sum * -1;
     }
 
 
