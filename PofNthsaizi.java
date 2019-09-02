@@ -1,12 +1,12 @@
-package swordingTooffer;
+package SwordingToOffer;
 
 public class PofNthsaizi {
-    public String[] printProbability(int n) {
+    public String[] printProbability (int n) {
         if (n <= 0)
             return null;
-        int maxValue=6;
+        int maxValue = 6;
         //结果可能性总数
-        int total = (int) Math.pow(maxValue, n);
+        int total = (int) Math.pow (maxValue, n);
         //可能出现的数字范围
         String[] result = new String[maxValue * n - n + 1];
 
@@ -32,10 +32,10 @@ public class PofNthsaizi {
         return result;
     }
 
-    public static void main(String[] args) {
-        String[] result = new PofNthsaizi().printProbability(3);
-        System.out.println(result.length);
+    public static void main (String[] args) {
+        String[] result = new PofNthsaizi ().printProbability (3);
+        System.out.println (result.length);
         for (String val : result)
-            System.out.print(val + ",");
+            System.out.print (val + ",");
     }
 }

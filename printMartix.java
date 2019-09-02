@@ -1,45 +1,60 @@
-package swordingTooffer;
+package SwordingToOffer;
 
 import java.util.ArrayList;
 
 public class printMartix {
-    public static ArrayList<Integer> printMatrix(int[][] matrix) {
-        ArrayList<Integer> result = new ArrayList<Integer>() ;
-        if(matrix==null || matrix.length==0) { return result ; }
+    public static ArrayList<Integer> printMatrix (int[][] matrix) {
+        ArrayList<Integer> result = new ArrayList<Integer> ();
+        if (matrix == null || matrix.length == 0) {
+            return result;
+        }
 
-        printMatrixClockWisely(matrix, 0, 0,
+        printMatrixClockWisely (matrix, 0, 0,
                 matrix.length - 1, matrix[0].length - 1, result);
 
-        return result ;
+        return result;
     }
 
-    public static void printMatrixClockWisely(int[][] matrix, int startRow, int startCol, int endRow, int endCol,
-                                        ArrayList<Integer> result) {
-        if(startRow<endRow && startCol<endCol) {
-            for(int j=startCol; j<=endCol; j++) { result.add(matrix[startRow][j]) ; }   //Right
-            for(int i=startRow+1; i<=endRow-1; i++) { result.add(matrix[i][endCol]) ; }     //Down
-            for(int j=endCol; j>=startCol; j--) { result.add(matrix[endRow][j]) ; }     //Left
-            for(int i=endRow-1; i>=startRow+1; i--) { result.add(matrix[i][startCol]) ; }   //Up
-            printMatrixClockWisely(matrix, startRow + 1, startCol + 1, endRow - 1, endCol - 1, result) ;
-        }else if(startRow==endRow && startCol<endCol) {
-            for(int j=startCol; j<=endCol; j++) { result.add(matrix[startRow][j]) ; }
-        }else if(startRow<endRow && startCol==endCol) {
-            for(int i=startRow; i<=endRow; i++) { result.add(matrix[i][endCol]) ; }
-        }else if(startRow==endRow && startCol==endCol) {
-            result.add(matrix[startRow][startCol]) ;
-        }else {
-            return ;
+    public static void printMatrixClockWisely (int[][] matrix, int startRow, int startCol, int endRow, int endCol,
+                                               ArrayList<Integer> result) {
+        if (startRow < endRow && startCol < endCol) {
+            for (int j = startCol; j <= endCol; j++) {
+                result.add (matrix[startRow][j]);
+            }   //Right
+            for (int i = startRow + 1; i <= endRow - 1; i++) {
+                result.add (matrix[i][endCol]);
+            }     //Down
+            for (int j = endCol; j >= startCol; j--) {
+                result.add (matrix[endRow][j]);
+            }     //Left
+            for (int i = endRow - 1; i >= startRow + 1; i--) {
+                result.add (matrix[i][startCol]);
+            }   //Up
+            printMatrixClockWisely (matrix, startRow + 1, startCol + 1, endRow - 1, endCol - 1, result);
+        } else if (startRow == endRow && startCol < endCol) {
+            for (int j = startCol; j <= endCol; j++) {
+                result.add (matrix[startRow][j]);
+            }
+        } else if (startRow < endRow && startCol == endCol) {
+            for (int i = startRow; i <= endRow; i++) {
+                result.add (matrix[i][endCol]);
+            }
+        } else if (startRow == endRow && startCol == endCol) {
+            result.add (matrix[startRow][startCol]);
+        } else {
+            return;
         }
     }
-    public static ArrayList<Integer> printMatrix2(int [][] array) {
+
+    public static ArrayList<Integer> printMatrix2 (int[][] array) {
         ArrayList<Integer> result = new ArrayList<Integer> ();
-        if(array.length==0) return result;
-        int row = array.length,col = array[0].length;
-        if(col==0) return result;
-        int layers = (Math.min(row,col)-1)/2+1;//这个是层数,需要几笔一笔画
-        for(int i=0;i<layers;i++){
-            for(int k = i;k<col-i;k++) result.add(array[i][k]);//左上至右上
-            for(int j=i+1;j<row-i;j++) result.add(array[j][col-i-1]);//右上至右下
+        if (array.length == 0) return result;
+        int row = array.length, col = array[0].length;
+        if (col == 0) return result;
+        int layers = (Math.min (row, col) - 1) / 2 + 1;//这个是层数,需要几笔一笔画
+        for (int i = 0; i < layers; i++) {
+            for (int k = i; k < col - i; k++) result.add (array[i][k]);//左上至右上
+            for (int j = i + 1; j < row - i; j++) result.add (array[j][col - i - 1]);//右上至右下
             /**
              *   从右下到左下，矩阵列的最大索引为column-1（从0开始），因为这一轮的从右上到右下多用了一
              *   个当前行后面的元素，再结合前几轮从右上到右下用掉的后面i个元素，所以一开始j=column-1-i-1。
@@ -50,15 +65,15 @@ public class printMartix {
              *   左下到左上同理
              */
 
-            for(int k=col-i-2;(k>=i)&&(row-i-1!=i);k--) result.add(array[row-i-1][k]);//右下至左下
-            for(int j=row-i-2;(j>i)&&(col-i-1)!=i;j--) result.add(array[j][i]);//左下至左上
+            for (int k = col - i - 2; (k >= i) && (row - i - 1 != i); k--) result.add (array[row - i - 1][k]);//右下至左下
+            for (int j = row - i - 2; (j > i) && (col - i - 1) != i; j--) result.add (array[j][i]);//左下至左上
         }
         return result;
     }
 
-    public static void main(String[] args) {
-        int[][]ss={
-                { 1,  2},
+    public static void main (String[] args) {
+        int[][] ss = {
+                {1, 2},
                 {3, 4}
         };
         System.out.println (printMatrix (ss));

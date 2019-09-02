@@ -1,4 +1,5 @@
-package swordingTooffer;
+package SwordingToOffer;
+
 class ListNode {
     int val;
     ListNode next = null;
@@ -9,28 +10,28 @@ class ListNode {
 }
 
 public class FindKthToTail {
-     public static ListNode FindKthToTail(ListNode head,int k) {
-         if (k<1||head==null){
-             return null;
-         }
-         ListNode p1,p2=null;
-         p1=head;
-         p2=head;
-         int a=k;
-         int count=0;
-         while (p1!=null){
-             p1=p1.next;
-             count++;
-             if (k<1){
-                 p2=p2.next;
-             }
-             k--;
-         }
-         if (count<a)return null;
-         return p2;
-}
+    public static ListNode FindKthToTail (ListNode head, int k) {
+        if (k < 1 || head == null) {
+            return null;
+        }
+        ListNode p1, p2 = null;
+        p1 = head;
+        p2 = head;
+        int a = k;
+        int count = 0;
+        while (p1 != null) {
+            p1 = p1.next;
+            count++;
+            if (k < 1) {
+                p2 = p2.next;
+            }
+            k--;
+        }
+        if (count < a) return null;
+        return p2;
+    }
 
-    public static void main(String[] args) {
+    public static void main (String[] args) {
 //         ListNode head=new ListNode(0);
 //         head.next=new ListNode(1);
 //         head.next.next=new ListNode(2);

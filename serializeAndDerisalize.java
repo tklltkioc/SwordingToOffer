@@ -1,4 +1,4 @@
-package swordingTooffer;
+package SwordingToOffer;
 
 /**
  * 因为输入的是根节点，序列化时要遍历该树，第一个进递归肯定是根节点。
@@ -8,40 +8,42 @@ package swordingTooffer;
  */
 
 public class serializeAndDerisalize {
-    static int index=-1;
+    static int index = -1;
 
     static String Serialize(TreeNode root) {
-        StringBuffer sb=new StringBuffer();
-        if (root==null){
-            sb.append("#,");
-            return sb.toString();
+        StringBuffer sb = new StringBuffer ();
+        if (root == null) {
+            sb.append ("#,");
+            return sb.toString ();
         }
-        sb.append(root.val+",");
-        sb.append(Serialize(root.left));
-        sb.append(Serialize(root.right));
-        return sb.toString();
+        sb.append (root.val + ",");
+        sb.append (Serialize (root.left));
+        sb.append (Serialize (root.right));
+        return sb.toString ();
     }
+
     static TreeNode Deserialize(String str) {
         index++;
-        int len = str.length();
-        if(index >= len){
+        int len = str.length ();
+        if (index >= len) {
             return null;
-         }
-        String[] strr = str.split(",");
+        }
+        String[] strr = str.split (",");
         TreeNode node = null;
-        if(!strr[index].equals("#")){
-            node = new TreeNode();
-            node.val=Integer.valueOf(strr[index]).intValue();//转换为int类型
-            node.left = Deserialize(str);
-            node.right = Deserialize(str);
+        if (!strr[index].equals ("#")) {
+            node = new TreeNode ();
+            node.val = Integer.valueOf (strr[index]).intValue ();//转换为int类型
+            node.left = Deserialize (str);
+            node.right = Deserialize (str);
         }
         return node;
     }
+
     private static void print(TreeNode root) {
         if (root != null) {
-            System.out.printf("%-3d", root.val);
-            print(root.left);
-            print(root.right);
+            System.out.printf ("%-3d", root.val);
+            print (root.left);
+            print (root.right);
         }
     }
 
@@ -54,24 +56,24 @@ public class serializeAndDerisalize {
         //  / \
         // 8   9
 
-        TreeNode n1 = new TreeNode();
-        n1.val=1;
-        TreeNode n2 = new TreeNode();
-        n2.val=2;
-        TreeNode n3 = new TreeNode();
-        n3.val=3;
-        TreeNode n4 = new TreeNode();
-        n4.val=4;
-        TreeNode n5 = new TreeNode();
-        n5.val=5;
-        TreeNode n6 = new TreeNode();
-        n6.val=6;
-        TreeNode n7 = new TreeNode();
-        n7.val=7;
-        TreeNode n8 = new TreeNode();
-        n8.val=8;
-        TreeNode n9 = new TreeNode();
-        n9.val=9;
+        TreeNode n1 = new TreeNode ();
+        n1.val = 1;
+        TreeNode n2 = new TreeNode ();
+        n2.val = 2;
+        TreeNode n3 = new TreeNode ();
+        n3.val = 3;
+        TreeNode n4 = new TreeNode ();
+        n4.val = 4;
+        TreeNode n5 = new TreeNode ();
+        n5.val = 5;
+        TreeNode n6 = new TreeNode ();
+        n6.val = 6;
+        TreeNode n7 = new TreeNode ();
+        n7.val = 7;
+        TreeNode n8 = new TreeNode ();
+        n8.val = 8;
+        TreeNode n9 = new TreeNode ();
+        n9.val = 9;
 
         n1.left = n2;
         n1.right = n3;
@@ -85,23 +87,21 @@ public class serializeAndDerisalize {
 //        System.out.println(s);
 //        print(Deserialize(s));
 
-        TreeNode nn1 = new TreeNode();
-        nn1.val=1;
-        TreeNode nn3 = new TreeNode();
-        nn3.val=3;
-        TreeNode nn4 = new TreeNode();
-        nn4.val=4;
-        TreeNode nn5 = new TreeNode();
-        nn5.val=5;
+        TreeNode nn1 = new TreeNode ();
+        nn1.val = 1;
+        TreeNode nn3 = new TreeNode ();
+        nn3.val = 3;
+        TreeNode nn4 = new TreeNode ();
+        nn4.val = 4;
+        TreeNode nn5 = new TreeNode ();
+        nn5.val = 5;
 
-        nn5.left=nn4;
-        nn4.right=nn3;
-        nn3.right=nn1;
-        String sx=Serialize(nn5);
-        System.out.println(sx);
-        print(Deserialize(sx));
-
-
+        nn5.left = nn4;
+        nn4.right = nn3;
+        nn3.right = nn1;
+        String sx = Serialize (nn5);
+        System.out.println (sx);
+        print (Deserialize (sx));
 
 
     }

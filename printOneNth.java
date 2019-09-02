@@ -1,10 +1,10 @@
-package swordingTooffer;
+package SwordingToOffer;
 
 public class printOneNth {
     //打印1到最大的n位数的主方法
-    public static void printToMaxOfDigits(int n){
-        if(n <= 0){
-            System.out.println("输入的n没有意义");
+    public static void printToMaxOfDigits(int n) {
+        if (n <= 0) {
+            System.out.println ("输入的n没有意义");
             return;
         }
         char number[] = new char[n];
@@ -13,18 +13,19 @@ public class printOneNth {
         }
         for (int i = 0; i < 10; ++i) {
             number[0] = (char) (i + '0');
-            printToMaxOfNDigitsRecursively(number, n, 0);
+            printToMaxOfNDigitsRecursively (number, n, 0);
         }
     }
+
     //利用递归实现1到最大的n位数的全排列
     public static void printToMaxOfNDigitsRecursively(char[] number, int n, int index) {
-        if(index == n - 1){
-            printNumber(number);
+        if (index == n - 1) {
+            printNumber (number);
             return;
         }
         for (int i = 0; i < 10; ++i) {
             number[index + 1] = (char) (i + '0');
-            printToMaxOfNDigitsRecursively(number, n, index + 1);
+            printToMaxOfNDigitsRecursively (number, n, index + 1);
         }
     }
 
@@ -33,18 +34,18 @@ public class printOneNth {
         boolean isBeginning0 = true;
         int nLength = number.length;
         for (int i = 0; i < nLength; ++i) {
-            if(isBeginning0 && number[i]!='0'){
+            if (isBeginning0 && number[i] != '0') {
                 isBeginning0 = false;
             }
-            if(!isBeginning0){
-                System.out.print(number[i]);
+            if (!isBeginning0) {
+                System.out.print (number[i]);
             }
         }
-        System.out.println();
+        System.out.println ();
     }
 
     public static void main(String[] args) {
-     printToMaxOfDigits(2);
+        printToMaxOfDigits (2);
 
     }
 }

@@ -1,21 +1,22 @@
-package swordingTooffer;
+package SwordingToOffer;
 
 import java.util.Stack;
 
 public class popAndpush {
-    public static boolean IsPopOrder(int [] pushA,int [] popA) {
-        if(pushA == null || popA == null || pushA.length == 0 || popA.length == 0 || pushA.length != popA.length) return false;
-        Stack<Integer> st = new Stack<Integer>();
+    public static boolean IsPopOrder(int[] pushA, int[] popA) {
+        if (pushA == null || popA == null || pushA.length == 0 || popA.length == 0 || pushA.length != popA.length)
+            return false;
+        Stack<Integer> st = new Stack<Integer> ();
         int i = 0;
         int j = 0;
-        st.push(pushA[i++]);
-        while(j <= popA.length-1){
-            while(popA[j] != st.peek()){
-                if(i == pushA.length) return false;
-                st.push(pushA[i++]);
+        st.push (pushA[i++]);
+        while (j <= popA.length - 1) {
+            while (popA[j] != st.peek ()) {
+                if (i == pushA.length) return false;
+                st.push (pushA[i++]);
             }
             j++;
-            st.pop();
+            st.pop ();
         }
         return true;
     }
@@ -27,9 +28,9 @@ public class popAndpush {
         int[] pop3 = {4, 3, 5, 1, 2};
         int[] pop4 = {3, 5, 4, 1, 2};
 
-        System.out.println("true: " + IsPopOrder (push, pop1));
-        System.out.println("true: " + IsPopOrder(push, pop2));
-        System.out.println("false: " + IsPopOrder(push, pop3));
-        System.out.println("false: " + IsPopOrder(push, pop4));
+        System.out.println ("true: " + IsPopOrder (push, pop1));
+        System.out.println ("true: " + IsPopOrder (push, pop2));
+        System.out.println ("false: " + IsPopOrder (push, pop3));
+        System.out.println ("false: " + IsPopOrder (push, pop4));
     }
 }
