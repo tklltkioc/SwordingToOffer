@@ -1,7 +1,8 @@
 package SwordingToOffer;
 
-public class arrRever {
-    static int cnt;
+// 数组中的逆序对
+public class arrReverse {
+    public static int cnt;
 
     public static int InversePairs(int[] array) {
         cnt = 0;
@@ -49,7 +50,7 @@ public class arrRever {
                 tmp[k++] = a[i++];
             else {
                 tmp[k++] = a[j++];
-                cnt += mid - i + 1;  // core code, calculate InversePairs............
+                cnt += mid - i + 1;  // 核心，计算逆序对数目
                 cnt %= 1000000007;
             }
         }
