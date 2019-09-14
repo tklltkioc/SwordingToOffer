@@ -1,5 +1,6 @@
 package SwordingToOffer;
 
+// 树的深度
 public class deepTree {
     public static int TreeDepth (TreeNode root) {
         if (root == null) return 0;
