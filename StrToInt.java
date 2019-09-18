@@ -1,5 +1,6 @@
 package SwordingToOffer;
 
+// 字符串转为数字
 public class StrToInt {
     public static int StrToInt(String str) {
         if (str.length () == 0 || str == null) {
