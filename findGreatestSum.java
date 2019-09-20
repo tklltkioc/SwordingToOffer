@@ -1,12 +1,13 @@
 package SwordingToOffer;
 
+// 数组连续最大子序列和
 public class findGreatestSum {
     public static int FindGreatestSumOfSubArray(int[] array) {
         if (array == null || array.length < 0) {
             return 0;
         }
-        int cu = 0;
-        int gre = 0;
+        int cu = array[0];
+        int gre = array[0];
         for (int i = 0; i < array.length; i++) {
             if (cu <= 0) {
                 cu = array[i];
@@ -31,7 +32,7 @@ public class findGreatestSum {
     }
 
     public static void main(String[] args) {
-        int p[] = {1, -2, 3, 4, -3};
+        int p[] = {-1, -2, -3, -4, -3};
         System.out.println (FindGreatestSumOfSubArray (p));
         System.out.println (FindGreatestSumOfSubArray2 (p));
     }
