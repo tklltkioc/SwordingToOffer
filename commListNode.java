@@ -1,5 +1,6 @@
 package SwordingToOffer;
 
+// 找出2个链表的公共节点
 public class commListNode {
     //用两个指针扫描"两个链表"，最终两个指针到达 null 或者到达公共结点。
     public static ListNode FindFirstCommonNode(ListNode pHead1, ListNode pHead2) {
