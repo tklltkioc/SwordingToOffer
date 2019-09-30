@@ -1,15 +1,16 @@
 package SwordingToOffer;
 
-class TreeNode {
-    int val = 0;
-    TreeNode left = null;
-    TreeNode right = null;
+
+public class subTree {
+    private static class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
 //    public TreeNode(int val) {
 //        this.val = val;
 //    }
-}
+    }
 
-public class subTree {
     /**
      * 输入两棵二叉树A和B，判断B是不是A的子结构。
      * 该方法是在A树中找到一个与B树的根节点相等的元素的结点，

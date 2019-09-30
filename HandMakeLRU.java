@@ -7,14 +7,15 @@ import java.util.Hashtable;
  * 若相应的key存在hashtable中，则将该节点移动到头节点的next节点，不存在则添加至头节点的next节点，
  * 超过则淘汰链表尾部的节点。
  */
-class DLinkedNode {
-    int key;
-    String value;
-    DLinkedNode pre;
-    DLinkedNode next;
-}
 
 public class HandMakeLRU {
+    private static class DLinkedNode {
+        int key;
+        String value;
+        DLinkedNode pre;
+        DLinkedNode next;
+    }
+
     private Hashtable<Integer, DLinkedNode> cache = new Hashtable<Integer, DLinkedNode> ();
     private int count;
     private int capacity;

@@ -1,6 +1,14 @@
 package SwordingToOffer;
 
 public class treeSymmetry {
+    private static class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
+//    public TreeNode(int val) {
+//        this.val = val;
+//    }
+    }
     public static boolean isSymmetry(TreeNode root) {
         if (root == null) {
             return true;

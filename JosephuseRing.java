@@ -1,6 +1,14 @@
 package SwordingToOffer;
 // 约瑟夫环
 public class JosephuseRing {
+    private static class ListNode {
+        int val;
+        ListNode next = null;
+
+//    ListNode(int val) {
+//        this.val = val;
+//    }
+    }
     public static int LastRemaining_Solution(int n, int m) {
         if (n == 0 || m == 0) return -1;
         return (LastRemaining_Solution (n - 1, m) + m) % n;

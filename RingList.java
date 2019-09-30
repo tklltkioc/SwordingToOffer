@@ -4,6 +4,14 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 
 public class RingList {
+    private static class ListNode {
+        int val;
+        ListNode next = null;
+
+//    ListNode(int val) {
+//        this.val = val;
+//    }
+    }
     public static ListNode EntryNodeOfLoop(ListNode pHead) {
         ListNode fast = pHead;
         ListNode slow = pHead;

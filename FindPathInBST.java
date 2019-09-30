@@ -10,6 +10,14 @@ import java.util.List;
  * 从树的根结点开始往下一直到叶销点所经过的结点形成一条路径。
  */
 public class FindPathInBST {
+    private static class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
+//    public TreeNode(int val) {
+//        this.val = val;
+//    }
+    }
     private static ArrayList<ArrayList<Integer>> listAll = new ArrayList<> ();
     private static ArrayList<Integer> list = new ArrayList<> ();
 

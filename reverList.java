@@ -1,6 +1,14 @@
 package SwordingToOffer;
 
 public class reverList {
+    private static class ListNode {
+        int val;
+        ListNode next = null;
+
+//    ListNode(int val) {
+//        this.val = val;
+//    }
+    }
     public static ListNode reverList(ListNode head) {
         if (head == null || head.next == null)
             return head;

@@ -2,6 +2,14 @@ package SwordingToOffer;
 
 // 找出2个链表的公共节点
 public class commListNode {
+    private static class ListNode {
+        int val;
+        ListNode next = null;
+
+//    ListNode(int val) {
+//        this.val = val;
+//    }
+    }
     //用两个指针扫描"两个链表"，最终两个指针到达 null 或者到达公共结点。
     public static ListNode FindFirstCommonNode(ListNode pHead1, ListNode pHead2) {
         ListNode p1 = pHead1;

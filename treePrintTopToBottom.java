@@ -5,6 +5,14 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class treePrintTopToBottom {
+    private static class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
+//    public TreeNode(int val) {
+//        this.val = val;
+//    }
+    }
     public static ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
         ArrayList<Integer> list = new ArrayList<> ();
         LinkedList<TreeNode> queue = new LinkedList<> ();

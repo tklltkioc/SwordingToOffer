@@ -1,15 +1,14 @@
 package SwordingToOffer;
 
-class ListNode {
-    int val;
-    ListNode next = null;
+public class FindKthToTail {
+    private static class ListNode {
+        int val;
+        ListNode next = null;
 
 //    ListNode(int val) {
 //        this.val = val;
 //    }
-}
-
-public class FindKthToTail {
+    }
     public static ListNode FindKthToTail (ListNode head, int k) {
         if (k < 1 || head == null) {
             return null;

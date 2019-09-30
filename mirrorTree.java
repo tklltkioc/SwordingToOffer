@@ -1,7 +1,16 @@
 package SwordingToOffer;
 
 public class mirrorTree {
-    public static void Mirror(TreeNode root) {
+    private static class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
+//    public TreeNode(int val) {
+//        this.val = val;
+//    }
+    }
+
+    public static void Mirror ( TreeNode root ) {
         if (root != null) {
             TreeNode tmp = root.left;
             root.left = root.right;
@@ -15,7 +24,7 @@ public class mirrorTree {
         }
     }
 
-    public static void printTree(TreeNode node) {
+    public static void printTree ( TreeNode node ) {
         if (node != null) {
             printTree (node.left);
             System.out.print (node.val + " ");
@@ -23,7 +32,7 @@ public class mirrorTree {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main ( String[] args ) {
         //       8
         //    /    \
         //   6     10

@@ -1,6 +1,14 @@
 package SwordingToOffer;
 
 public class mergeLinkList {
+    private static class ListNode {
+        int val;
+        ListNode next = null;
+
+//    ListNode(int val) {
+//        this.val = val;
+//    }
+    }
     public static ListNode mergeList(ListNode head1, ListNode head2) {
         if (head1 == null && head2 == null) {
             return null;

@@ -5,6 +5,14 @@ import java.util.List;
 import java.util.Stack;
 
 public class printZhiTree {
+    private static class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
+//    public TreeNode(int val) {
+//        this.val = val;
+//    }
+    }
     /**
      * 奇数层从左扫描，偶数层从右扫描
      *
